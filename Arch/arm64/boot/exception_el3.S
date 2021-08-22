@@ -1,4 +1,5 @@
 .balign 0x800
+.global exception_table_el3
 exception_table_el3:
 current_el_sp0_sync:
 // TODO: exception handler for the synchronous exception from current EL using sp0
