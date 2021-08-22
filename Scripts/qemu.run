@@ -1,0 +1,7 @@
+#!/bin/bash
+echo ">>>>>>>>>>>>>>>> CLEAN KERNEL <<<<<<<<<<<<<<<<"
+make clean
+echo ">>>>>>>>>>>>>>>> BUINDING KERNEL <<<<<<<<<<<<<<<<"
+make kernel.elf
+echo ">>>>>>>>>>>>>>>> RUNNING KERNEL <<<<<<<<<<<<<<<<"
+qemu-system-aarch64 -M raspi3 -kernel ./Build/kernel.elf -serial mon:stdio -nographic

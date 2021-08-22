@@ -35,4 +35,7 @@ SECTIONS {
 	}
 	. = ALIGN(4096);
 	__bss_end = .;
+
+	. = 0x8000 + __bss_end;
+    __stack_base = .;
 }
