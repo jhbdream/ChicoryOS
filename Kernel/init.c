@@ -1,6 +1,16 @@
-volatile unsigned int * const UART0DR = (unsigned int *) 0x09000000;
+/*
+ * Created Date: Saturday, August 21st 2021, 11:51:39 pm
+ * Author: neroyang
+ * 
+ * Copyright (c) 2021 Your Company
+ */
+
+#include "include/device.h"
+#include "include/console.h"
+
 int _kernel_entry(void* argv){
-	while(1){
-		*UART0DR = 'y';
-	}
+	init_early_devices();
+	Console* console = console_get();
+	console->put(console, "hello, synestiaos!");
+	while(1);
 }

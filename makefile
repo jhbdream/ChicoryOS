@@ -15,9 +15,15 @@ OBJS = $(BUILD_DIR)/boot.o \
 		$(BUILD_DIR)/exception_el3.o \
 		$(BUILD_DIR)/exception_el2.o \
 		$(BUILD_DIR)/exception_el1.o \
+		$(BUILD_DIR)/device_tree.o \
+		$(BUILD_DIR)/device.o \
+		$(BUILD_DIR)/console.o \
 		$(BUILD_DIR)/init.o
 
 $(BUILD_DIR)/%.o: $(ARCH_DIR)/$(ARCH)/boot/%.S
+	$(CC) -c -o $@ $< $(CFLAGS)
+
+$(BUILD_DIR)/%.o: $(KERNEL_DIR)/drivers/%.c
 	$(CC) -c -o $@ $< $(CFLAGS)
 
 $(BUILD_DIR)/%.o: $(KERNEL_DIR)/%.c
