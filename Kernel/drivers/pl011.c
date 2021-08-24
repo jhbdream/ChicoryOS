@@ -34,7 +34,8 @@ static DeviceDesc pl011_desc = {
 	.doProbe = pl011_probe
 };
 
-int pl011_init(void*) {
+int pl011_init(void* args) {
+	*ptr = 'l';
 	register_device(&pl011_desc);
 } 
 
