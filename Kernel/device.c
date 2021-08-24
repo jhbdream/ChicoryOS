@@ -18,8 +18,8 @@ void register_device(DeviceDesc *desc){
 }
 
 void init_early_devices(){ 
-	*((unsigned int *)(0x09000000)) = 'k';
 	if(&__initcall_init_lv0_start == &__initcall_init_lv0_end){
+		*((unsigned int *)(0x09000000)) = 't';
 		return;
 	}
 	*((unsigned int *)(0x09000000)) = 'k';

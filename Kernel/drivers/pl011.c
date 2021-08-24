@@ -7,8 +7,8 @@
 
 #ifndef __SYNESTIAOS_DRIVER_PL011__
 #define __SYNESTIAOS_DRIVER_PL011__
-#include "include/device.h"
-#include "include/console.h"
+#include "../include/device.h"
+#include "../include/console.h"
 
 #define UART0DR 0x09000000
 volatile unsigned int * const ptr = (unsigned int *) UART0DR;
@@ -26,16 +26,15 @@ static Console pl011_console = {
 };
 
 void pl011_probe (DeviceDesc *desc, DeviceNode *node) {
-	register_console_device(&pl011_console);
+	register_console(&pl011_console);
 }
 
 static DeviceDesc pl011_desc = {
 	.compatible = "arm,pl011",
-	.doProbe = pl011_probe
+	.doProbe = &pl011_probe
 };
 
 int pl011_init(void* args) {
-	*ptr = 'l';
 	register_device(&pl011_desc);
 } 
 
