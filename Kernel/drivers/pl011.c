@@ -36,6 +36,7 @@ static DeviceDesc pl011_desc = {
 
 int pl011_init(void* args) {
 	register_device(&pl011_desc);
+	return 0;
 } 
 
 early_device_init(pl011_init)

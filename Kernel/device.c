@@ -19,12 +19,10 @@ void register_device(DeviceDesc *desc){
 
 void init_early_devices(){ 
 	if(&__initcall_init_lv0_start == &__initcall_init_lv0_end){
-		*((unsigned int *)(0x09000000)) = 't';
 		return;
 	}
-	*((unsigned int *)(0x09000000)) = 'k';
-	EarlyDeviceInitFunc *function = NULL;
-	for(function = __initcall_init_lv0_start; function != __initcall_init_lv0_end; function++){
-		(*function)(NULL);
+	EarlyDeviceInitFunc* function = NULL;
+	for(function = __initcall_init_lv0_start; function < __initcall_init_lv0_end; function++){
+	    (*function)(NULL);
 	}
 }
