@@ -17,10 +17,7 @@ void register_device(DeviceDesc *desc){
 	}
 }
 
-void init_early_devices(){ 
-	if(&__initcall_init_lv0_start == &__initcall_init_lv0_end){
-		return;
-	}
+void init_early_devices(){
 	EarlyDeviceInitFunc* function = NULL;
 	for(function = __initcall_init_lv0_start; function < __initcall_init_lv0_end; function++){
 	    (*function)(NULL);
