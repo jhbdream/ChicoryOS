@@ -25,7 +25,7 @@ static Console pl011_console = {
 	.put = pl011_put
 };
 
-void pl011_probe (DeviceDesc *desc, DeviceNode *node) {
+void pl011_probe(DeviceDesc *desc, DeviceNode *node) {
 	register_console(&pl011_console);
 }
 
