@@ -6,6 +6,7 @@ function(setup_compiler_flags)
             "-Werror"
             "-nostartfiles"
             "-nostdlib"
+            "-nostdinc"
             "--no-standard-libraries"
             "-Wno-unused-command-line-argument"
             "-Wno-unknown-warning-option"
