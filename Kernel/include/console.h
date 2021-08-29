@@ -9,6 +9,7 @@
 #define __SYNESTIAOS_KERNEL_CONSOLE__
 #include "dlist.h"
 
+struct Console;
 typedef void (*ConsolePutFunc)(struct Console* console, char* str);
 
 typedef struct Console {

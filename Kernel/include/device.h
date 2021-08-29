@@ -17,6 +17,7 @@ typedef int (*EarlyDeviceInitFunc)(void *);
 
 #define early_device_init(func) __initcall_init(func, 0)
 
+struct DeviceDesc;
 typedef void(*DeviceProbeFunc)(struct DeviceDesc *desc, DeviceNode *node);
 typedef struct DeviceDesc {
 	char *compatible;

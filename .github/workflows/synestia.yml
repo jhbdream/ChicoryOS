@@ -16,7 +16,7 @@ jobs:
 
       - name: Install Dependencies
         shell: bash
-        run: sudo apt-get update && sudo apt-get install --fix-missing -y build-essential binutils make cmake clang llvm
+        run: sudo apt-get update && sudo apt-get install --fix-missing -y build-essential binutils make cmake clang llvm lld
 
       - name: Create Build Environment
         run: cmake -E make_directory ${{runner.workspace}}/build

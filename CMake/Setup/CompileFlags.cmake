@@ -1,13 +1,15 @@
 function(setup_compiler_flags)
     string(JOIN " " common_compiler_flags
 #            "-v"
-#            "-Wall"
-#            "-Wextra"
-#            "-Werror"
+            "-Wall"
+            "-Wextra"
+            "-Werror"
             "-nostartfiles"
             "-nostdlib"
             "--no-standard-libraries"
             "-Wno-unused-command-line-argument"
+            "-Wno-unknown-warning-option"
+            "-Wno-unused-parameter"
             )
 
     set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} ${common_compiler_flags}" PARENT_SCOPE)
