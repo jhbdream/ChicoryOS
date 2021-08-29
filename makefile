@@ -5,7 +5,7 @@ KERNEL_DIR = $(OS_BASE_DIR)/Kernel
 ARCH = arm64
 
 CC=clang
-CFLAGS = -target arm64v8a-unknown-linux-elf -mcpu=cortex-a53  -g
+CFLAGS = -target arm64v8a-unknown-linux-elf -mcpu=cortex-a72  -g
 CFLAGS += -nostdlib --no-standard-libraries
 LDFLAGS = -fuse-ld=lld -T $(ARCH_DIR)/$(ARCH)/kernel.lds 
 LDFLAGS += -mfpu=none -mfloat-abi=soft -nostartfiles -v 
