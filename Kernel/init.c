@@ -11,6 +11,6 @@
 int _kernel_entry(void* argv){
 	init_early_devices();
 	Console* console = console_get();
-	console->put(console, "hello, synestiaos!");
+	console->put(console, "Hello, SynestiaOS.");
 	while(1);
 }
