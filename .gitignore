@@ -1,4 +1,5 @@
 Refs/
 Build/
+_build
 .idea/
 cmake-build-*/

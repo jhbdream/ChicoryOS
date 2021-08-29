@@ -14,22 +14,11 @@ jobs:
         with:
           submodules: 'recursive'
 
-      - name: Install Dependencies
+      - name: Docker build
         shell: bash
-        run: sudo apt-get update && sudo apt-get install --fix-missing -y build-essential binutils make cmake clang llvm lld
-
-      - name: Create Build Environment
-        run: cmake -E make_directory ${{runner.workspace}}/build
-
-      - name: Configure CMake
-        shell: bash
-        working-directory: ${{runner.workspace}}/build
-        run: cmake $GITHUB_WORKSPACE -DCMAKE_BUILD_TYPE=$BUILD_TYPE -DCMAKE_TOOLCHAIN_FILE=$GITHUB_WORKSPACE/CMake/Toolchain/ToolchainClang.cmake ..
-
-      - name: Build
-        working-directory: ${{runner.workspace}}/build
-        shell: bash
-        run: cmake --build . --config $BUILD_TYPE
+        run: |
+          cd $GITHUB_WORKSPACE/Docker
+          docker-compose run synestia /root/Synestia/Docker/entrypoint.sh
 
       - uses: actions/upload-artifact@v2
         with:
