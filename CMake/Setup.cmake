@@ -1,0 +1,31 @@
+message(STATUS "CMAKE_C_COMPILER_ID:${CMAKE_C_COMPILER_ID} CMAKE_CXX_COMPILER_ID:${CMAKE_CXX_COMPILER_ID}")
+if (CMAKE_C_COMPILER_ID STREQUAL "Clang" OR CMAKE_CXX_COMPILER_ID STREQUAL "Clang")
+    message(STATUS "using clang compiler")
+else ()
+    message(FATAL_ERROR "unsupported compiler: CMAKE_C_COMPILER_ID:${CMAKE_C_COMPILER_ID} CMAKE_CXX_COMPILER_ID:${CMAKE_CXX_COMPILER_ID}")
+endif ()
+
+# find all cmake files, and then include the file
+file(GLOB cmake_files LIST_DIRECTORIES false CMake/Setup/*.cmake)
+message(STATUS "found CmakeFiles: ${cmake_files}")
+foreach (cmake_file ${cmake_files})
+    message(STATUS "include ${cmake_file}")
+    include(${cmake_file})
+endforeach ()
+
+disable_compiler_link_flags()
+
+macro(print_compiler_flags)
+    string(REPEAT "=" 300 compiler_flags_separator)
+    message(STATUS "${compiler_flags_separator}")
+    message(STATUS "${compiler_flags_separator}")
+    message(STATUS "CMAKE_ASM_FLAGS:  ${CMAKE_ASM_FLAGS}")
+    message(STATUS "CMAKE_C_FLAGS:    ${CMAKE_C_FLAGS}")
+    message(STATUS "CMAKE_CXX_FLAGS:  ${CMAKE_CXX_FLAGS}")
+    message(STATUS "CMAKE_OBJCOPY:    ${CMAKE_OBJCOPY}")
+    message(STATUS "${compiler_flags_separator}")
+    message(STATUS "${compiler_flags_separator}")
+endmacro()
+print_compiler_flags()
+
+message(STATUS "********** setup ended **********")
