@@ -14,4 +14,6 @@
 
 typedef unsigned long* Pointer;
 
+typedef unsigned int uint32_t;
+
 #endif /* __SYNESTIAOS_KERNEL_STDDEF__ */

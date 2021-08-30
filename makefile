@@ -19,7 +19,7 @@ OBJS = $(BUILD_DIR)/boot.o \
 		$(BUILD_DIR)/device.o \
 		$(BUILD_DIR)/console.o \
 		$(BUILD_DIR)/pl011.o \
-		$(BUILD_DIR)/gic_v3.o \
+		$(BUILD_DIR)/gic400.o \
 		$(BUILD_DIR)/init.o
 
 $(BUILD_DIR)/%.o: $(ARCH_DIR)/$(ARCH)/boot/%.S

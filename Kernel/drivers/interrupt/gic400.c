@@ -5,8 +5,17 @@
  * Copyright (c) 2021 SynestiaOS
  */
 #include "../../include/device.h"
+#include "gic400.h"
+
+#define GIC_400_BASE_ADDRESS            0x4c0040000
+#define GIC_400_LOW_BASE_ADDRESS        0xff840000
+#define GIC_400_NUM_CPU                 4
+#define GIC_400_NUM_SPIS                192
 
 void gic400_probe(DeviceDesc *desc, DeviceNode *node) {
+    // _Static_assert(OffsetOf(GICDistributor,GICD_CTLR) == 0, "Distributor Control Register GICD_CTLR offset should be 0");
+    // FIXME: check distributor offset
+    // FIXME: reset distributor registers
     // TODO:
 }
 
