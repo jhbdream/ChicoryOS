@@ -4,11 +4,8 @@
  * 
  * Copyright (c) 2021 SynestiaOS
  */
-
-#ifndef __SYNESTIAOS_DRIVER_PL011__
-#define __SYNESTIAOS_DRIVER_PL011__
-#include "../include/device.h"
-#include "../include/console.h"
+#include "../../include/device.h"
+#include "../../include/console.h"
 
 #define UART0DR 0x09000000
 volatile unsigned int * const ptr = (unsigned int *) UART0DR;
@@ -40,5 +37,3 @@ int pl011_init(void* args) {
 } 
 
 early_device_init(pl011_init)
-
-#endif /* __SYNESTIAOS_DRIVER_PL011__ */

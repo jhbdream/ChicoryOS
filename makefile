@@ -19,12 +19,16 @@ OBJS = $(BUILD_DIR)/boot.o \
 		$(BUILD_DIR)/device.o \
 		$(BUILD_DIR)/console.o \
 		$(BUILD_DIR)/pl011.o \
+		$(BUILD_DIR)/gic_v3.o \
 		$(BUILD_DIR)/init.o
 
 $(BUILD_DIR)/%.o: $(ARCH_DIR)/$(ARCH)/boot/%.S
 	$(CC) -c -o $@ $< $(CFLAGS)
 
-$(BUILD_DIR)/%.o: $(KERNEL_DIR)/drivers/%.c
+$(BUILD_DIR)/%.o: $(KERNEL_DIR)/drivers/uart/%.c
+	$(CC) -c -o $@ $< $(CFLAGS)
+
+$(BUILD_DIR)/%.o: $(KERNEL_DIR)/drivers/interrupt/%.c
 	$(CC) -c -o $@ $< $(CFLAGS)
 
 $(BUILD_DIR)/%.o: $(KERNEL_DIR)/%.c
