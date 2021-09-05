@@ -19,6 +19,7 @@ OBJS = $(BUILD_DIR)/boot.o \
 		$(BUILD_DIR)/device.o \
 		$(BUILD_DIR)/console.o \
 		$(BUILD_DIR)/pl011.o \
+		$(BUILD_DIR)/generic_timer.o \
 		$(BUILD_DIR)/gic400.o \
 		$(BUILD_DIR)/init.o
 
@@ -26,6 +27,9 @@ $(BUILD_DIR)/%.o: $(ARCH_DIR)/$(ARCH)/boot/%.S
 	$(CC) -c -o $@ $< $(CFLAGS)
 
 $(BUILD_DIR)/%.o: $(KERNEL_DIR)/drivers/uart/%.c
+	$(CC) -c -o $@ $< $(CFLAGS)
+
+$(BUILD_DIR)/%.o: $(KERNEL_DIR)/drivers/timer/%.c
 	$(CC) -c -o $@ $< $(CFLAGS)
 
 $(BUILD_DIR)/%.o: $(KERNEL_DIR)/drivers/interrupt/%.c
