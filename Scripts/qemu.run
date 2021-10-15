@@ -1,7 +1,0 @@
-#!/bin/bash
-echo ">>>>>>>>>>>>>>>> CLEAN KERNEL <<<<<<<<<<<<<<<<"
-make clean
-echo ">>>>>>>>>>>>>>>> BUINDING KERNEL <<<<<<<<<<<<<<<<"
-make kernel.elf
-echo ">>>>>>>>>>>>>>>> RUNNING KERNEL <<<<<<<<<<<<<<<<"
-qemu-system-aarch64 -machine virt -cpu cortex-a72 -nographic -kernel ./Build/kernel.elf -serial mon:stdio
