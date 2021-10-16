@@ -92,4 +92,22 @@ typedef struct GICDistributor {
     //
 } GICDistributor;
 
+typedef struct GICCPUInterface {
+    int GICC_CTLR;
+    int GICC_PMR;
+    int GICC_BPR;
+    int GICC_IAR;
+    int GICC_EOIR;
+    int GICC_RPR;
+    int GICC_HPPIR;
+    int GICC_ABPR;
+    int GICC_AIAR;
+    int GICC_AEOIR;
+    int GICC_AHPPIR[0x2A];
+    int GICC_APR0[0x04];
+    int GICC_NSAPR0[0x07];
+    int GICC_IIDR[0x3c1];
+    int GICC_DIR;
+} GICCPUInterface;
+
 #endif /* __SYNESTIAOS_BREEZY_GIC400_H__ */
