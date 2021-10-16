@@ -110,7 +110,7 @@ typedef struct GICCPUInterface {
     int GICC_DIR;
 } GICCPUInterface;
 
-typedef struct GICCPUVirutalInterface {
+typedef struct GICVirutalInterfaceControl {
     int GICH_HCR;
     int GICH_VTR;
     int GICH_VMCR;
@@ -122,6 +122,23 @@ typedef struct GICCPUVirutalInterface {
     int GICH_LR1;
     int GICH_LR2;
     int GICH_LR3;
+} GICVirtualInterfaceControl;
+
+typedef struct GICCPUVirtualInterface {
+    int GICV_CTLR;
+    int GICV_PMR;
+    int GICV_BPR;
+    int GICV_IAR;
+    int GICV_EOIR;
+    int GICV_RPR;
+    int GICV_HPPIR;
+    int GICV_ABPR;
+    int GICV_AIAR;
+    int GICV_AEOIR;
+    int GICV_AHPPIR[(0xD0 - 0x28) / 4];
+    int GICV_APR0[(0xFC - 0XD0) / 4];
+    int GICV_IIDR[(0x1000 - 0xFC) / 4];
+    int GICV_DIR;
 } GICCPUVirtualInterface;
 
 #endif /* __SYNESTIAOS_BREEZY_GIC400_H__ */
