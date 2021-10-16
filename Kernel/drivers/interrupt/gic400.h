@@ -92,4 +92,36 @@ typedef struct GICDistributor {
     //
 } GICDistributor;
 
+typedef struct GICCPUInterface {
+    int GICC_CTLR;
+    int GICC_PMR;
+    int GICC_BPR;
+    int GICC_IAR;
+    int GICC_EOIR;
+    int GICC_RPR;
+    int GICC_HPPIR;
+    int GICC_ABPR;
+    int GICC_AIAR;
+    int GICC_AEOIR;
+    int GICC_AHPPIR[(0xD0 - 0x28) / 4];
+    int GICC_APR0[(0xE0 - 0xD0) / 4];
+    int GICC_NSAPR0[(0xFC - 0xE0) / 4];
+    int GICC_IIDR[(0x1000 - 0xFC) / 4];
+    int GICC_DIR;
+} GICCPUInterface;
+
+typedef struct GICCPUVirutalInterface {
+    int GICH_HCR;
+    int GICH_VTR;
+    int GICH_VMCR;
+    int GICH_MISR[(0x20 - 0x10) / 4];
+    int GICH_EISR0[(0x30 - 0x20) / 4];
+    int GICH_ELSR0[(0xF0 - 0x30) / 4];
+    int GICH_APR0[(0x100 - 0xF0) / 4];
+    int GICH_LR0;
+    int GICH_LR1;
+    int GICH_LR2;
+    int GICH_LR3;
+} GICCPUVirtualInterface;
+
 #endif /* __SYNESTIAOS_BREEZY_GIC400_H__ */
