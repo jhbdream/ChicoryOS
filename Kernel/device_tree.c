@@ -6,6 +6,7 @@
  */
 
 #include "include/device_tree.h"
+
 #include "include/stddef.h"
 
 DeviceNode *device_tree_find_by_compatible(char *compatible) {

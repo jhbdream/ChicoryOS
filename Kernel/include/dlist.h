@@ -14,7 +14,7 @@ typedef struct ListNode {
 } ListNode;
 
 #define OffsetOf(type, member) ((int)((char *)&((type *)0)->member))
-#define ContainerOf(ptr, type, member)                                         \
+#define ContainerOf(ptr, type, member) \
   ((type *)((char *)(ptr) - (char *)(&(((type *)0)->member))))
 
 #endif /* __SYNESTIAOS_KERNEL_DLIST__ */

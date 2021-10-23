@@ -5,6 +5,7 @@
  * Copyright (c) 2021 SynestiaOS
  */
 #include "gic400.h"
+
 #include "../../include/device.h"
 
 #define GIC_400_BASE_ADDRESS 0x4c0040000
