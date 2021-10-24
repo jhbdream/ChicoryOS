@@ -3,3 +3,4 @@ Build/
 _build
 .idea/
 cmake-build-*/
+.project_alt.json
