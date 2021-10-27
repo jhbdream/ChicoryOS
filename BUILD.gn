@@ -6,7 +6,7 @@ ARCH = "arm64"
 executable("ChicoryOS") {
   # defines = []
   # include_dirs = []
-  cflags = ["-target arm64v8a-unknown-linux-elf", "-mcpu=cortex-a72", "-g"]
+  cflags = ["--target=arm64v8a-unknown-none-elf", "-mcpu=cortex-a72", "-g"]
   cflags_c = ["-nostdlib", "--no-standard-libraries"]
   ldflags = ["-fuse-ld=lld", "-T$ARCH_DIR/$ARCH/kernel.lds", "-mfpu=none", "-mfloat-abi=soft", "-nostartfiles", "-v"]
   sources = [
