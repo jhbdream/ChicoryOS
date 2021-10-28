@@ -1,17 +1,23 @@
 toolchain("clang") {
   tool("cc") {
-    depfile = "{{output}}.d"
     command = "clang-12 -c {{source}} -o {{output}} {{defines}} {{include_dirs}} {{cflags}} {{cflags_c}} "
-    depsformat = "gcc"
     description = "CC {{output}}"
     outputs =
         [ "{{source_out_dir}}/{{target_output_name}}.{{source_name_part}}.o" ]
   }
 
+  tool("asm") {
+    command = "clang-12 -c {{source}} -o {{output}} {{defines}} {{include_dirs}} {{cflags}} {{cflags_c}} "
+    description = "CC {{output}}"
+    outputs =
+        [ "{{source_out_dir}}/{{target_output_name}}.{{source_name_part}}.o" ]
+  }
+
+
   tool("link") {
     outfile = "{{target_output_name}}{{output_extension}}"
     rspfile = "$outfile.rsp"
-    command = "clang-12 -o $outfile @$rspfile {{ldflags}}"
+    command = "clang-12 -o $outfile -Wl,--start-group @$rspfile -Wl,--end-group {{ldflags}}"
     description = "LINK $outfile"
     default_output_dir = "{{root_out_dir}}"
     rspfile_content = "{{inputs}}"

@@ -7,7 +7,7 @@ executable("ChicoryOS") {
   # defines = []
   # include_dirs = []
   cflags = [
-    "--target=arm64v8a-unknown-none-elf",
+    "--target=arm64v8a-unknown-linux-elf",
     "-mcpu=cortex-a72",
     "-g"
   ]
@@ -16,6 +16,7 @@ executable("ChicoryOS") {
     "--no-standard-libraries"
   ]
   ldflags = [
+    "--target=arm64v8a-unknown-linux-elf",
     "-fuse-ld=lld",
     "-T$ARCH_DIR/$ARCH/kernel.lds",
     "-mfpu=none",
@@ -23,7 +24,6 @@ executable("ChicoryOS") {
     "-nostdlib",
     "--no-standard-libraries",
     "-nostartfiles",
-    "--target=arm64v8a-unknown-none-elf",
     "-mcpu=cortex-a72",
     "-v"
   ]

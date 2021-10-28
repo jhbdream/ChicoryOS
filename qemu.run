@@ -1,2 +1,2 @@
 #!/bin/bash
-qemu-system-aarch64 -machine virt -cpu cortex-a72 -nographic -kernel ./Build/kernel.elf -serial mon:stdio
+qemu-system-aarch64 -machine virt -cpu cortex-a72 -nographic -kernel ./out/ChicoryOS -serial mon:stdio
