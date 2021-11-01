@@ -8,17 +8,17 @@
 #include "include/console.h"
 #include "include/device.h"
 
-int _kernel_entry(int mode) {
+int _kernel_entry(int el) {
   init_early_devices();
   Console *console = console_get();
-  if(mode == 1){
+  if (el == 1) {
     console->put(console, "Hello from kernel.");
-  }
-  if(mode == 2){
+  } else if (el == 2) {
     console->put(console, "Hello from hypervisor.");
-  }
-  if(mode == 3){
+  } else if (el == 3) {
     console->put(console, "Hello from security monitor.");
+  } else {
+    console->put(console, "Hello from unknown el.");
   }
 
   while (1)

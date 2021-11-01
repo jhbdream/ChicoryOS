@@ -10,18 +10,18 @@ _start:
 
 	ldr x1, =__stack_base
 	mov sp, x1
-	mov x1, #1
+	mov x0, #1
 	b _kernel_entry
 
 
 init_securiy_monitor:
 	ldr x1, =__stack_base
 	mov sp, x1
-	mov x1, #3
+	mov x0, #3
 	b _kernel_entry
 
 init_hypervisor:
 	ldr x1, =__stack_base
 	mov sp, x1
-	mov x1, #2
+	mov x0, #2
 	b _kernel_entry
