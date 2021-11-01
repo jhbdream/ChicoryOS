@@ -1,2 +1,11 @@
 #!/bin/bash
-qemu-system-aarch64 -s -machine virt -cpu cortex-a72 -nographic -m 512 -smp 2 -kernel ./out/ChicoryOS -serial mon:stdio
+qemu-system-aarch64 -s \
+    -machine virtualization=on \
+    -machine secure=on \
+    -machine virt \
+    -cpu cortex-a72 \
+    -nographic \
+    -m 512 \
+    -smp 2 \
+    -kernel ./out/ChicoryOS \
+    -serial mon:stdio
