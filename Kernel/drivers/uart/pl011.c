@@ -2,8 +2,9 @@
  * Created Date: Monday, August 23rd 2021, 10:14:55 pm
  * Author: neroyang
  *
- * Copyright (c) 2021 SynestiaOS
+ * Copyright (c) 2021 ChicoryOS
  */
+
 #include "../../include/console.h"
 #include "../../include/device.h"
 

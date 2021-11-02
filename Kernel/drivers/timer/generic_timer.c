@@ -1,6 +1,9 @@
-//
-// Created by neroyang on 2021/9/5.
-//
+/*
+ * Created Date: Tuesday, Nov 01st 2021, 23:56:39 pm
+ * Author: neroyang
+ *
+ * Copyright (c) 2021 ChicoryOS
+ */
 
 #include "../../include/device.h"
 

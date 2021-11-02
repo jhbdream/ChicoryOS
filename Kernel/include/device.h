@@ -2,10 +2,11 @@
  * Created Date: Monday, August 23rd 2021, 8:46:49 pm
  * Author: neroyang
  *
- * Copyright (c) 2021 SynestiaOS
+ * Copyright (c) 2021 ChicoryOS
  */
-#ifndef __SYNESTIAOS_KERNEL_DEVICE__
-#define __SYNESTIAOS_KERNEL_DEVICE__
+
+#ifndef __CHICORYOS_KERNEL_DEVICE__
+#define __CHICORYOS_KERNEL_DEVICE__
 
 #include "device_tree.h"
 #include "dlist.h"
@@ -35,4 +36,4 @@ void register_device(DeviceDesc *desc);
 
 void init_early_devices();
 
-#endif /* __SYNESTIAOS_KERNEL_DEVICE__ */
+#endif /* __CHICORYOS_KERNEL_DEVICE__ */

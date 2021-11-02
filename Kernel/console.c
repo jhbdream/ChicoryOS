@@ -2,7 +2,7 @@
  * Created Date: Monday, August 23rd 2021, 10:29:38 pm
  * Author: neroyang
  *
- * Copyright (c) 2021 SynestiaOS
+ * Copyright (c) 2021 ChicoryOS
  */
 
 #include "include/console.h"

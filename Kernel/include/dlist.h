@@ -2,11 +2,11 @@
  * Created Date: Monday, August 23rd 2021, 8:51:43 pm
  * Author: neroyang
  *
- * Copyright (c) 2021 SynestiaOS
+ * Copyright (c) 2021 ChicoryOS
  */
 
-#ifndef __SYNESTIAOS_KERNEL_DLIST__
-#define __SYNESTIAOS_KERNEL_DLIST__
+#ifndef __CHICORYOS_KERNEL_DLIST__
+#define __CHICORYOS_KERNEL_DLIST__
 
 typedef struct ListNode {
   struct ListNode *prev;
@@ -17,4 +17,4 @@ typedef struct ListNode {
 #define ContainerOf(ptr, type, member) \
   ((type *)((char *)(ptr) - (char *)(&(((type *)0)->member))))
 
-#endif /* __SYNESTIAOS_KERNEL_DLIST__ */
+#endif /* __CHICORYOS_KERNEL_DLIST__ */

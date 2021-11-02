@@ -1,10 +1,11 @@
-//
-// Created by neroyang on 2021/8/30.
-// https://developer.arm.com/documentation/ddi0471/b/programmers-model/distributor-register-summary
-//
-
-#ifndef __SYNESTIAOS_BREEZY_GIC400_H__
-#define __SYNESTIAOS_BREEZY_GIC400_H__
+/*
+ * Created Date: Tuesday, Nov 01st 2021, 23:56:39 pm
+ * Author: neroyang
+ *
+ * Copyright (c) 2021 ChicoryOS
+ */
+#ifndef __CHICORYOS_DRIVERS_GIC400_H__
+#define __CHICORYOS_DRIVERS_GIC400_H__
 
 #include "../../include/dlist.h"
 
@@ -148,4 +149,4 @@ typedef struct GICCPUVirtualInterface {
   int GICV_DIR;
 } GICCPUVirtualInterface;
 
-#endif /* __SYNESTIAOS_BREEZY_GIC400_H__ */
+#endif /* __CHICORYOS_DRIVERS_GIC400_H__ */

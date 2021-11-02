@@ -2,10 +2,10 @@
  * Created Date: Monday, August 30th 2021, 10:52:08 pm
  * Author: neroyang
  *
- * Copyright (c) 2021 SynestiaOS
+ * Copyright (c) 2021 ChicoryOS
  */
-#include "gic400.h"
 
+#include "gic400.h"
 #include "../../include/device.h"
 
 #define GIC_400_BASE_ADDRESS 0x4c0040000
