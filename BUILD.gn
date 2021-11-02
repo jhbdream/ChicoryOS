@@ -1,6 +1,7 @@
 OS_BASE_DIR = "/home/yang/ChicoryOS"
 ARCH_DIR = "$OS_BASE_DIR/Arch"
 KERNEL_DIR = "$OS_BASE_DIR/Kernel"
+HYPERVISOR_DIR = "$OS_BASE_DIR/Hypervisor"
 ARCH = "arm64"
 
 executable("ChicoryOS") {
@@ -39,5 +40,6 @@ executable("ChicoryOS") {
     "$KERNEL_DIR/drivers/timer/generic_timer.c",
     "$KERNEL_DIR/drivers/interrupt/gic400.c",
     "$KERNEL_DIR/init.c",
+    "$HYPERVISOR_DIR/hypervisor.c",
   ]
 }

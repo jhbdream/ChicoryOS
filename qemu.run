@@ -4,8 +4,8 @@ qemu-system-aarch64 -s \
     -machine secure=on \
     -machine virt \
     -cpu cortex-a72 \
-    -nographic \
+    -smp cores=4 \
     -m 512 \
-    -smp 2 \
     -kernel ./out/ChicoryOS \
+    -nographic \
     -serial mon:stdio

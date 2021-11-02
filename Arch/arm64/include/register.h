@@ -66,6 +66,8 @@
 #define SPSR_EL3_M_EL3t 0xC
 #define SPSR_EL3_M_EL3h 0xD
 
+#define MPIDR_CPU_ID_MASK 0x3
+
 #define read_reg(reg)                                 \
   static int read_reg_##reg##() {                     \
     int value;                                        \

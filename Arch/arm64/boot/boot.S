@@ -1,4 +1,5 @@
 #include "../include/register.h"
+#include "../include/common.h"
 
 .global _start
 _start:
@@ -34,7 +35,15 @@ init_securiy_monitor:
 	eret
 
 init_hypervisor:
-	ldr x1, =__stack_base
-	mov sp, x1
-	mov x0, #2
-	b _kernel_entry
+	mrs x1, mpidr_el1
+	and x1, x1, #MPIDR_CPU_ID_MASK
+
+	mov x3, #STACK_SIZE
+	mul x4, x1, x3
+	ldr x2, =__stack_base
+	sub x2, x2, x4
+	mov sp, x2
+
+	cbnz x1, hypervisor_start_secondary
+
+	b hypervisor_start_primary
