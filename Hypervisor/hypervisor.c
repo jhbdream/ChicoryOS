@@ -11,8 +11,9 @@
 void hypervisor_start_primary() {
   init_early_devices();
   Console *console = console_get();
-  console->put(console, "Hypervisor primary start.");
-
+  console->put(console, "Hypervisor primary start.\n");
+  
+  init_key_devices();
   while (1)
     ;
 
@@ -21,7 +22,7 @@ void hypervisor_start_primary() {
 void hypervisor_start_secondary() {
   init_early_devices();
   Console *console = console_get();
-  console->put(console, "Hypervisor secondary start.");
+  console->put(console, "Hypervisor secondary start.\n");
 
   while (1)
     ;

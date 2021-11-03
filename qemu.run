@@ -1,10 +1,10 @@
 #!/bin/bash
-qemu-system-aarch64 -s \
-    -machine virtualization=on \
+qemu-system-aarch64 \
     -machine secure=on \
+    -machine virtualization=on \
     -machine virt \
     -cpu cortex-a72 \
-    -smp cores=4 \
+    -smp cpus=4 \
     -m 512 \
     -kernel ./out/ChicoryOS \
     -nographic \

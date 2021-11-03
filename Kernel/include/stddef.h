@@ -11,9 +11,14 @@
 #define KERNEL_NAME_LEN 32
 
 #define NULL (void *)0
+#define E_ERR (-1)
+#define E_OK 0
 
 typedef unsigned long *Pointer;
 
 typedef unsigned int uint32_t;
+typedef int int32_t;
+typedef unsigned long uint64_t;
+typedef long int64_t;
 
 #endif /* __CHICORYOS_KERNEL_STDDEF__ */

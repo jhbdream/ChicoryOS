@@ -12,13 +12,14 @@
 #include "dlist.h"
 #include "stddef.h"
 
-typedef int (*EarlyDeviceInitFunc)(void *);
+typedef int (*DeviceInitFunc)(void *);
 #define __initcall_init(func, level)                            \
-  static EarlyDeviceInitFunc __initcall_init_lv##level##_##func \
+  static DeviceInitFunc __initcall_init_lv##level##_##func \
       __attribute__((__used__))                                 \
           __attribute__((section(".initcall_lv" #level ".init"))) = func;
 
 #define early_device_init(func) __initcall_init(func, 0)
+#define key_device_init(func) __initcall_init(func, 1)
 
 struct DeviceDesc;
 typedef void (*DeviceProbeFunc)(struct DeviceDesc *desc, DeviceNode *node);
@@ -35,5 +36,6 @@ typedef struct Device {
 void register_device(DeviceDesc *desc);
 
 void init_early_devices();
+void init_key_devices();
 
 #endif /* __CHICORYOS_KERNEL_DEVICE__ */
