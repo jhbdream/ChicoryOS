@@ -44,8 +44,6 @@ init_hypervisor:
 	sub x2, x2, x4
 	mov sp, x2
 
-	sev
-
 	cbnz x1, hypervisor_start_secondary
 
 	b hypervisor_start_primary

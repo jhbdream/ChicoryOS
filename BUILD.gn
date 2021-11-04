@@ -39,6 +39,7 @@ executable("ChicoryOS") {
     "$KERNEL_DIR/drivers/uart/pl011.c",
     "$KERNEL_DIR/drivers/timer/generic_timer.c",
     "$KERNEL_DIR/drivers/interrupt/gic400.c",
+    "$ARCH_DIR/$ARCH/smcc.c",
     "$KERNEL_DIR/drivers/psci/psci.c",
     "$KERNEL_DIR/power_manager.c",
     "$KERNEL_DIR/init.c",

@@ -1,10 +1,11 @@
 #!/bin/bash
 qemu-system-aarch64 \
+    -s -S \
     -machine secure=on \
     -machine virtualization=on \
     -machine virt \
     -cpu cortex-a72 \
-    -smp cpus=4 \
+    -smp cores=8 \
     -m 512 \
     -kernel ./out/ChicoryOS \
     -nographic \
