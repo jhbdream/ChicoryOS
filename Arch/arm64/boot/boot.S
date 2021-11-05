@@ -35,6 +35,14 @@ init_securiy_monitor:
 	eret
 
 init_hypervisor:
+	mrs x4, mpidr_el1
+        orr x4, x4, 0x1
+	ldr x0, =0xC4000003
+	mov x1, x4
+	ldr x2, _start
+	mov x3, 1
+	smc #0
+
 	mrs x1, mpidr_el1
 	and x1, x1, #MPIDR_CPU_ID_MASK
 

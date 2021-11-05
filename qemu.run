@@ -1,12 +1,12 @@
 #!/bin/bash
 qemu-system-aarch64 \
-    -s -S \
-    -machine secure=on \
     -machine virtualization=on \
     -machine virt \
     -cpu cortex-a72 \
     -smp cores=8 \
     -m 512 \
+    -bios ./bl/u-boot.bin \
     -kernel ./out/ChicoryOS \
     -nographic \
-    -serial mon:stdio
+    -serial mon:stdio \
+    -s -S
