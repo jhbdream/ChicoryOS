@@ -16,7 +16,7 @@ _halt:
 
 init_securiy_monitor:
 	mov x1, #0
-	orr x1, x1, #SCR_EL3_NS 
+	orr x1, x1, #SCR_EL3_NS
 	orr x1, x1, #SCR_EL3_HCE
 	orr x1, x1, #SCR_EL3_RW
 	msr scr_el3, x1
@@ -35,14 +35,7 @@ init_securiy_monitor:
 	eret
 
 init_hypervisor:
-	mrs x4, mpidr_el1
-        orr x4, x4, 0x1
-	ldr x0, =0xC4000003
-	mov x1, x4
-	ldr x2, _start
-	mov x3, 1
-	smc #0
-
+	//如果超过了4个核，这个判断需要修改
 	mrs x1, mpidr_el1
 	and x1, x1, #MPIDR_CPU_ID_MASK
 

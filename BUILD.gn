@@ -1,4 +1,4 @@
-OS_BASE_DIR = "/home/yang/ChicoryOS"
+OS_BASE_DIR = "/home/jhb/opensource/ChicoryOS"
 ARCH_DIR = "$OS_BASE_DIR/Arch"
 KERNEL_DIR = "$OS_BASE_DIR/Kernel"
 HYPERVISOR_DIR = "$OS_BASE_DIR/Hypervisor"
@@ -25,6 +25,7 @@ executable("ChicoryOS") {
     "-nostdlib",
     "--no-standard-libraries",
     "-nostartfiles",
+    "-static",
     "-mcpu=cortex-a72",
     "-v"
   ]

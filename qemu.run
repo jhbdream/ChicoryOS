@@ -1,12 +1,16 @@
 #!/bin/bash
 qemu-system-aarch64 \
     -machine virtualization=on \
+    -machine secure=on  \
     -machine virt \
     -cpu cortex-a72 \
-    -smp cores=8 \
+    -smp cores=4 \
     -m 512 \
-    -bios ./bl/u-boot.bin \
-    -kernel ./out/ChicoryOS \
+    -bios ./out/ChicoryOS   \
+    -device loader,addr=0x40000000,cpu-num=0 \
+    -device loader,addr=0x40000000,cpu-num=1 \
+    -device loader,addr=0x40000000,cpu-num=2 \
+    -device loader,addr=0x40000000,cpu-num=3 \
     -nographic \
     -serial mon:stdio \
     -s -S
