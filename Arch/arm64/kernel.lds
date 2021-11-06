@@ -1,6 +1,7 @@
 ENTRY(_start)
 
 SECTIONS {
+	. = 0x40000000;
 	__text_start = .;
 	.text :
 	{
@@ -55,6 +56,6 @@ SECTIONS {
 	. = ALIGN(4096);
 	__bss_end = .;
 
-	. = 0x8000 + __bss_end;
-    __stack_base = .;
+	. = 0x40000 + __bss_end;
+	__stack_base = .;
 }

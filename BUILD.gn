@@ -26,7 +26,8 @@ executable("ChicoryOS") {
     "--no-standard-libraries",
     "-nostartfiles",
     "-mcpu=cortex-a72",
-    "-v"
+    "-v",
+    "-static"
   ]
   sources = [
     "$ARCH_DIR/$ARCH/boot/boot.S",
