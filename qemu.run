@@ -2,7 +2,7 @@
 qemu-system-aarch64 \
     -machine virt,secure=on,virtualization=on \
     -cpu cortex-a72 \
-    -smp cores=8 \
+    -smp cores=4 \
     -m 512 \
     -bios ./out/ChicoryOS \
     -nographic \
@@ -11,8 +11,3 @@ qemu-system-aarch64 \
     -device loader,addr=0x40000000,cpu-num=1 \
     -device loader,addr=0x40000000,cpu-num=2 \
     -device loader,addr=0x40000000,cpu-num=3 \
-    -device loader,addr=0x40000000,cpu-num=4 \
-    -device loader,addr=0x40000000,cpu-num=5 \
-    -device loader,addr=0x40000000,cpu-num=6 \
-    -device loader,addr=0x40000000,cpu-num=7 \
-    -s -S

@@ -8,8 +8,11 @@
 #include "../Kernel/include/console.h"
 #include "../Kernel/include/device.h"
 
+volatile uint32_t uart_init_done = 0;
+
 void hypervisor_start_primary() {
   init_early_devices();
+  uart_init_done = 1;
   Console *console = console_get();
   console->put(console, "Hypervisor primary start.\n");
   
@@ -20,7 +23,7 @@ void hypervisor_start_primary() {
 }
 
 void hypervisor_start_secondary() {
-  init_early_devices();
+  while (uart_init_done == 0) {}
   Console *console = console_get();
   console->put(console, "Hypervisor secondary start.\n");
 
