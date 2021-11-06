@@ -4,10 +4,8 @@ qemu-system-aarch64 \
     -cpu cortex-a72 \
     -smp cores=4 \
     -m 512 \
-    -bios ./out/ChicoryOS \
+    -bios ./bl/boot.bin   \
+    -device loader,file=./out/ChicoryOS \
     -nographic \
     -serial mon:stdio \
-    -device loader,addr=0x40000000,cpu-num=0 \
-    -device loader,addr=0x40000000,cpu-num=1 \
-    -device loader,addr=0x40000000,cpu-num=2 \
-    -device loader,addr=0x40000000,cpu-num=3 \
+	#-s -S
